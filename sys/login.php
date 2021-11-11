@@ -16,7 +16,7 @@ session_start();
                       $row = mysqli_fetch_array($result);
  
                       $_SESSION["UserID"] = $row["ID"];
-                      $_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
+                      $_SESSION["User"] = $row["Firstname"];
                       $_SESSION["Userlevel"] = $row["Userlevel"];
  
                       if($_SESSION["Userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php

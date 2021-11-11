@@ -4,15 +4,13 @@
  
 if (!$_SESSION["UserID"]){
  
-	  Header("Location: form_login.php");
+	  Header("Location: ../index.php");
  
 }else{?>
 
-<?php
-$estab =$_SESSION["UserID"];
-
-include_once 'head.php'; ?>
-
+<?php 
+include_once 'head.php'; 
+?>
 <div class="app-wrapper">
 
     <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -36,8 +34,8 @@ include_once 'head.php'; ?>
                                 </div>
                                 <div class="mb-3">
                                     <label for="setting-input-2" class="form-label">ความเชี่ยวชาญ</label>
-                                    <input name="property" type="text" class="form-control" id="setting-input-2" value="" required>
-                                    <input name="estab" type="hidden" class="form-control" id="setting-input-2" value="<?php echo $estab; ?>" required>
+                                    <input name="property" type="text" class="form-control" id="setting-input-2" value="" required><?php $UserID= $_SESSION["UserID"]; ?>
+                                    <input name="estab" type="hidden" class="form-control" id="setting-input-2" value="<?php echo $UserID; ?>" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="setting-input-2" class="form-label">วุฒิการศึกษา</label>

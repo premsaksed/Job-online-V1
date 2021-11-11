@@ -1,4 +1,5 @@
 
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -51,7 +52,7 @@
 					    </div><!--//app-utility-item-->
 			            
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><?php $UserID= $_SESSION["User"]; echo$UserID; ?>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.php">Account</a></li>
 								<!-- <li><a class="dropdown-item" href="settings.php">Settings</a></li> -->

@@ -55,8 +55,15 @@ $work_id = $_GET['work_id'];
 									<thead>
 										<tr>
 											<th class="cell">รหัสงาน</th>
-											<th class="cell">รายละเอียด</th>
-											
+											<th class="cell">ผู้สมัคร</th>
+											<th class="cell">วันเกิด</th>
+											<th class="cell">มหาวิทยาลัย</th>
+											<th class="cell">คณะ</th>
+											<th class="cell">สาขา</th>
+											<th class="cell">ชั้นปี</th>
+											<th class="cell">วุฒิการศึกษา</th>
+											<th class="cell">เบอร์ติดต่อ</th>
+											<th class="cell">ตำแหน่ง</th>
 											<th class="cell">ความเชี่ยวชาญ</th>
 											<th class="cell">ผู้สมัคร</th>
 											<th class="cell">สถานะ</th>
@@ -64,7 +71,7 @@ $work_id = $_GET['work_id'];
 										</tr>
 									</thead>
 									<tbody>
-									<?php $sql = "SELECT w_work.w_id,user.Firstname,work.position,work.property,w_work.status,w_work.user FROM w_work INNER JOIN work ON w_work.work = work.work_id INNER JOIN user ON  w_work.user = user.ID where work_id=$work_id";
+									<?php $sql = "SELECT  user.date,user.faculty,user.education,user.group,user.lavel,user.qualification,user.phone,w_work.w_id,user.Firstname,work.position,work.property,w_work.status,w_work.user FROM w_work INNER JOIN work ON w_work.work = work.work_id INNER JOIN user ON w_work.user = user.ID where work_id=$work_id";
 										$result = $con->query($sql);
 
 										if ($result->num_rows > 0) {
@@ -73,9 +80,17 @@ $work_id = $_GET['work_id'];
 											?>
 										<tr>
 											<td class="cell">#<?php echo $work_id; ?></td>
+											<td class="cell"><?php echo $row["Firstname"]; ?></td>
+											<td class="cell"><?php echo $row["date"]; ?></td>
+											<td class="cell"><?php echo $row["education"]; ?></td>
+											<td class="cell"><?php echo $row["faculty"]; ?></td>
+											<td class="cell"><?php echo $row["group"]; ?></td>
+											<td class="cell"><?php echo $row["lavel"]; ?></td>
+											<td class="cell"><?php echo $row["qualification"]; ?></td>
+											<td class="cell"><?php echo $row["phone"]; ?></td>
 											<td class="cell"><span class="truncate"><?php echo $row["position"]; ?></span></td>
 											<td class="cell"><?php echo $row["property"]; ?></td>
-											<td class="cell"><?php echo $row["Firstname"]; ?></td>
+											
 											<td class="cell"><?php if($row["status"]=='1'){
 												echo 'รับเข้าทำงาน';
 											}else{

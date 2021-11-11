@@ -2,10 +2,7 @@
 <?php
 include_once '../connectdb.php';
 
-if (!$_SESSION["UserID"]) {
-
-    Header("Location: form_login.php");
-} else { ?>
+?>
 
 
     <?php
@@ -44,17 +41,7 @@ if (!$_SESSION["UserID"]) {
 						    </div><!--//app-card-header-->
 						   
 							<div class="app-card-body px-4 w-100">
-							    <div class="item border-bottom py-3">
-								    <div class="row justify-content-between align-items-center">
-									    <div class="col-auto">
-										    <div class="item-label mb-2"><strong>Photo</strong></div>
-										    <div class="item-data"><img class="profile-image" src="assets/images/user.png" alt=""></div>
-									    </div><!--//col-->
-									    <div class="col text-end">
-										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
-									    </div><!--//col-->
-								    </div><!--//row-->
-							    </div><!--//item-->
+							    
 								<form action="edit_pro.php" method="post">
 							    <div class="item border-bottom py-3">
 								    <div class="row justify-content-between align-items-center">
@@ -160,4 +147,3 @@ if (!$_SESSION["UserID"]) {
 </body>
 </html> 
 
-<?php } ?>

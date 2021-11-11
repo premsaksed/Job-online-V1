@@ -29,7 +29,7 @@
 					<h2 class="auth-heading text-center mb-4">สมัครใช้งานผู้หางาน</h2>					
 	
 					<div class="auth-form-container text-start mx-auto">
-					<form method="post" action="insert.php" class="auth-form auth-signup-form">         
+					<form method="post" action="insertuser.php" class="auth-form auth-signup-form">         
 							<div  class="email mb-3">
 								<label class="sr-only" for="signup-email">ชื่อ</label>
 								<input id="signup-name" name="Firstname" type="text" class="form-control signup-name" placeholder="Full name" required="required">
@@ -42,6 +42,34 @@
 								<label class="sr-only" for="signup-password">Password</label>
 								<input id="signup-password" name="Password" type="password" class="form-control signup-password" placeholder="Create a password" required="required">
 								<input id="signup-password" name="Userlevel" type="hidden" value="M" class="form-control signup-password" placeholder="Create a password" required="required">
+							</div>
+							<div  class="email mb-3">
+								<label class="sr-only" for="signup-email">วันเกิด</label>
+								<input id="signup-name" name="date" type="date" class="form-control signup-name" placeholder="Full name" required="required">
+							</div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-email">วุฒิการศึกษา</label>
+								<input id="signup-email" name="qualification" type="text" class="form-control signup-email" placeholder="วุฒิการศึกษา" required="required">
+							</div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-email">มหาวิทยาลัย</label>
+								<input id="signup-email" name="education" type="text" class="form-control signup-email" placeholder="มหาวิทยาลัย" required="required">
+							</div>
+							<div class="password mb-3">
+								<label class="sr-only" for="signup-password">คณะ</label>
+								<input id="signup-password" name="faculty" type="text" class="form-control signup-password" placeholder="คณะ" required="required">
+							</div>
+							<div  class="email mb-3">
+								<label class="sr-only" for="signup-email">สาขา</label>
+								<input id="signup-name" name="group" type="text" class="form-control signup-name" placeholder="สาขา" required="required">
+							</div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-email">ชั้นปี</label>
+								<input id="signup-email" name="lavel" type="text" class="form-control signup-email" placeholder="ชั้นปี" required="required">
+							</div>
+							<div class="password mb-3">
+								<label class="sr-only" for="signup-password">เบอร์ติดต่อ</label>
+								<input id="signup-password" name="phone" type="text" class="form-control signup-password" placeholder="เบอร์ติดต่อ" required="required">
 							</div>
 							
 							

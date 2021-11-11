@@ -3,6 +3,10 @@ include_once '../connectdb.php';
 
 
 ?>
+<?php
+$estab =$_SESSION["UserID"];
+?>
+
 <div class="app-wrapper">
 
 	<div class="app-content pt-3 p-md-3 p-lg-4">
@@ -47,7 +51,7 @@ include_once '../connectdb.php';
 
 		
 
-
+<?php $UserID= $_SESSION["UserID"]; ?>
 			<div class="tab-content" id="orders-table-tab-content">
 				<div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
 					<div class="app-card app-card-orders-table shadow-sm mb-5">
@@ -66,9 +70,8 @@ include_once '../connectdb.php';
 										</tr>
 									</thead>
 									<tbody>
-										<?php $sql = "SELECT user.Firstname,work.work_id,work.position,work.age,work.ed_qual,work.estab,work.property,work.date,work.time FROM work INNER JOIN user ON  work.estab = user.ID";
+										<?php $sql = "SELECT work.work_id,user.Firstname,work.work_id,work.position,work.age,work.ed_qual,work.estab,work.property,work.date,work.time FROM work INNER JOIN user ON  work.estab = user.ID where work.estab =$UserID";
 										$result = $con->query($sql);
-
 										if ($result->num_rows > 0) {
 											// output data of each row
 											while ($row = $result->fetch_assoc()) {

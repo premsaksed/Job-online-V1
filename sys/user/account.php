@@ -1,16 +1,12 @@
-<?php session_start(); ?>
-<?php
+
+
+<?php include_once 'head.php';
 include_once '../connectdb.php';
-
-if (!$_SESSION["UserID"]) {
-
-    Header("Location: form_login.php");
-} else { ?>
-
+?>
 
     <?php
     $ID = $_SESSION["UserID"];
-    include_once 'head.php'; ?>
+     ?>
     <div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -44,17 +40,7 @@ if (!$_SESSION["UserID"]) {
 						    </div><!--//app-card-header-->
 						   
 							<div class="app-card-body px-4 w-100">
-							    <div class="item border-bottom py-3">
-								    <div class="row justify-content-between align-items-center">
-									    <div class="col-auto">
-										    <div class="item-label mb-2"><strong>Photo</strong></div>
-										    <div class="item-data"><img class="profile-image" src="assets/images/user.png" alt=""></div>
-									    </div><!--//col-->
-									    <div class="col text-end">
-										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
-									    </div><!--//col-->
-								    </div><!--//row-->
-							    </div><!--//item-->
+							   
 								<form action="edit_pro.php" method="post">
 							    <div class="item border-bottom py-3">
 								    <div class="row justify-content-between align-items-center">
@@ -72,10 +58,87 @@ if (!$_SESSION["UserID"]) {
 								    <div class="row justify-content-between align-items-center">
 									    <div class="col-auto">
 										    <div class="item-label"><strong>Email</strong></div>
-									        
+										
 									    </div><!--//col-->
 									    <div class="col text-end">
 										<input  class="form-control signin-email" type="text"  value="<?php echo $row["Username"]; ?>" required name="Username" placeholder="Username">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>วันเกิด</strong></div>
+										
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="date"  value="<?php echo $row["date"]; ?>" required name="date" placeholder="date">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>Phone</strong></div>
+									        
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="text"  value="<?php echo $row["phone"]; ?>" required name="phone" placeholder="phone">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>สถาบันที่จบ</strong></div>
+									        
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="text"  value="<?php echo $row["education"]; ?>" required name="education" placeholder="education">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>คณะ</strong></div>
+									        
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="text"  value="<?php echo $row["faculty"]; ?>" required name="faculty" placeholder="faculty">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>สาขา</strong></div>
+									        
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="text"  value="<?php echo $row["group"]; ?>" required name="group" placeholder="group">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>ชั้นปี</strong></div>
+									        
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="text"  value="<?php echo $row["lavel"]; ?>" required name="lavel" placeholder="lavel">
+									    </div><!--//col-->
+								    </div><!--//row-->
+							    </div><!--//item-->
+							    <div class="item border-bottom py-3">
+								    <div class="row justify-content-between align-items-center">
+									    <div class="col-auto">
+										    <div class="item-label"><strong>วุฒิการศึกษา</strong></div>
+									        
+									    </div><!--//col-->
+									    <div class="col text-end">
+										<input  class="form-control signin-email" type="text"  value="<?php echo $row["qualification"]; ?>" required name="qualification" placeholder="qualification">
 									    </div><!--//col-->
 								    </div><!--//row-->
 							    </div><!--//item-->
@@ -160,4 +223,3 @@ if (!$_SESSION["UserID"]) {
 </body>
 </html> 
 
-<?php } ?>
